@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>list</title>
+		<link rel="stylesheet" type="text/css" href="/css/base/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
+	</head>
+
+	<body>
+		<div id="headercontainer"></div>
+		<div id="container">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddPositionModal" style="margin: 0 30px;">添加职位</button>
+			<!--职位信息表-->
+			<table class="table table-striped table-bordered" id="Position_List">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>职位名称</th>
+						<th>薪资</th>
+						<th>公司名称</th>
+						<th>公司logo</th>
+						<th colspan="2">操作</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<!--分页标签-->
+			<nav aria-label="Page navigation">
+				<ul class="pagination" id="pagination"></ul>
+			</nav>
+
+			<!--弹出添加职位模态框-->
+			<div class="modal fade" id="AddPositionModal" tabindex="-1" role="dialog" aria-labelledby="AddPositionModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="AddPositionModalLabel">添加职位</h4>
+						</div>
+						<div class="alert alert-warning hide" role="alert" id="Position_Tips">输入框不能为空!</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="Position">职位名称</label>
+								<input type="text" class="form-control" id="Position" placeholder="请输入职位名称">
+							</div>
+							<div class="form-group">
+								<label for="Salary">薪资</label>
+								<input type="text" class="form-control" id="Salary" placeholder="请输入薪资">
+							</div>
+							<div class="form-group">
+								<label for="Company">公司名称</label>
+								<input type="text" class="form-control" id="Company" placeholder="请输入所在公司名称">
+							</div>
+							<div class="form-group">
+								<label for="logo">公司logo</label>
+								<input type="file" class="form-control UpFile" id="logo">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="SaveMessBtn">保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--修改模态框-->
+			<div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="UpdateModalModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="UpdateModalModalLabel">添加职位</h4>
+						</div>
+						<!--<div class="alert alert-warning hide" role="alert" id="update_Tips">输入框不能为空!</div>-->
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="update_Position">职位名称</label>
+								<input type="text" class="form-control" id="update_Position">
+							</div>
+							<div class="form-group">
+								<label for="update_Salary">薪资</label>
+								<input type="text" class="form-control" id="update_Salary">
+							</div>
+							<div class="form-group">
+								<label for="update_Company">公司名称</label>
+								<input type="text" class="form-control" id="update_Company">
+							</div>
+							<div class="form-group">
+								<label for="up_logo">公司logo</label>
+								<input type="file" class="form-control UpFile" id="up_logo">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="SaveUpdateBtn">保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="/js/base/jquery.js"></script>
+	<script src="/js/base/bootstrap.js"></script>
+	<script src="/js/base/ejs.js"></script>
+	<script src="/js/common/header/login.js"></script>
+	<script src="/js/common/header/register.js"></script>
+	<script src="/js/common/header/header.js"></script>
+	<script src="/js/pages/list/PositionList.js"></script>
+	<script src="/js/pages/list/UpdatePosition.js"></script>
+	<script src="/js/pages/list/pagination.js"></script>
+	<script src="/js/pages/list/addPosition.js"></script>
+	<script src="/js/pages/list/list.js"></script>
+
+</html>
